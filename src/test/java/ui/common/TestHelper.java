@@ -16,7 +16,7 @@ public class TestHelper {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\apps\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\app\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.loft.com");
