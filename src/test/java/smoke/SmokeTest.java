@@ -9,7 +9,7 @@ public class SmokeTest {
 
     @Test
     public void verifySomething() {
-
+        System.out.println("This smoke test");
     }
 
 
