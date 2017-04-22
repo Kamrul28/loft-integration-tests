@@ -10,7 +10,7 @@ import ui.common.PageHelper;
  */
 public class SignInPage extends PageHelper {
     WebDriver driver;
-    @FindBy(xpath ="html/body/header/div/div/div[2]/div[1]/div/a[1]")
+    @FindBy(xpath = "html/body/header/div/div/div[2]/div[1]/div/a[1]")
     private WebElement clickOnSignInPageLink;
     @FindBy(id = "login-submit")
     private WebElement clickOnsignInPageSignInButton;
@@ -18,12 +18,11 @@ public class SignInPage extends PageHelper {
     private WebElement emailFieldvaliedtionerror;
 
 
-
-
     public SignInPage(WebDriver webDriver) {
         super(webDriver);
     }
-    public String verifySignInPage(){
+
+    public String verifySignInPage() {
         clickOnSignInPageLink.click();
         clickOnsignInPageSignInButton.click();
         return emailFieldvaliedtionerror.getText();

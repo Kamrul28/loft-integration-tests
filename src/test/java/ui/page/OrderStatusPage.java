@@ -8,12 +8,10 @@ import ui.common.TestHelper;
 /**
  * Created by KAMRUBY on 4/6/2017.
  */
-public class OrderStatusPage extends TestHelper{
+public class OrderStatusPage extends TestHelper {
     WebDriver driver;
     @FindBy(xpath = "html/body/header/div/div/div[2]/div[1]/a")
     public WebElement clickOnSignInButton;
-
-
 
 
 }

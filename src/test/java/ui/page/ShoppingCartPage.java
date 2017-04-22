@@ -8,7 +8,7 @@ import ui.common.PageHelper;
 /**
  * Created by KAMRUBY on 4/5/2017.
  */
-public class ShoppingCartPage extends PageHelper{
+public class ShoppingCartPage extends PageHelper {
 
     @FindBy(id = "search-toggle")
     private WebElement searchToggle;
@@ -55,9 +55,6 @@ public class ShoppingCartPage extends PageHelper{
     public String getCartQuantity() {
         return cartQuantityText.getText();
     }
-
-
-
 
 
 }

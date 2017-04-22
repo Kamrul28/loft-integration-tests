@@ -9,7 +9,7 @@ import ui.page.ShoppingCartPage;
 /**
  * Created by KAMRUBY on 4/5/2017.
  */
-public class ShoppingCartTest extends TestHelper{
+public class ShoppingCartTest extends TestHelper {
 
     @Test
     public void verifyShoppingCart() {
@@ -18,7 +18,6 @@ public class ShoppingCartTest extends TestHelper{
         Assert.assertEquals("#432952", shoppingCartPage.getCartStyleItem());
         Assert.assertEquals("1", shoppingCartPage.getCartQuantity());
     }
-
 
 
 }
