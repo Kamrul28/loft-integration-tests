@@ -13,6 +13,11 @@ public class SignInPageTest extends TestHelper {
     @Test
     public void verifySignInPage() {
         SignInPage signInPage = PageFactory.initElements(driver, SignInPage.class);
+        signInPage.navigateToSignInPage();
         Assert.assertEquals("Please enter your email address", signInPage.verifySignInPage());
     }
+
+    //TODO write test for create account fields validations
+    //TODO create test suite
+
 }
