@@ -22,11 +22,11 @@ public class ShoppingCartPage extends PageHelper {
     private WebElement sizeLButton;
     @FindBy(xpath = "//*[@class='colors']//label[1]")
     private WebElement firstColorButton;
-    @FindBy(id = "dp-add-to-bag")
+    @FindBy(id = "pdp-add-to-bag")
     private WebElement addToBagButton;
     @FindBy(id = "my-bag-icon")
     private WebElement myBagButton;
-    @FindBy(xpath = "//*[@class='style']")
+    @FindBy(xpath = "//*[@class='details']//aside")
     private WebElement cartSytleNumText;
     @FindBy(xpath = "//*[@class='selection']//em[4]")
     private WebElement cartQuantityText;
@@ -36,14 +36,18 @@ public class ShoppingCartPage extends PageHelper {
         super(webDriver);
     }
 
-    public void addToCart(String styleItemNum) {
-        rejectPromoPopup();
+    public void addToCart(String styleItemNum) throws InterruptedException {
+        Thread.sleep(1000); //TODO use explicit wait
         searchToggle.click();
+        Thread.sleep(1000); //TODO use explicit wait
+        searchField.clear();
         searchField.sendKeys(styleItemNum);
         lookupLink.click();
+        Thread.sleep(1000); //TODO use explicit wait
         itemStyleNumText.getText().contains(styleItemNum);
         sizeLButton.click();
         firstColorButton.click();
+        Thread.sleep(1000); //TODO use explicit wait
         addToBagButton.click();
         myBagButton.click();
     }
@@ -52,7 +56,8 @@ public class ShoppingCartPage extends PageHelper {
         return cartSytleNumText.getText();
     }
 
-    public String getCartQuantity() {
+    public String getCartQuantity() throws InterruptedException {
+        Thread.sleep(1000); //TODO use explicit wait
         return cartQuantityText.getText();
     }
 

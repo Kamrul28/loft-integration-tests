@@ -20,14 +20,11 @@ public class PageHelper {
     public void rejectPromoPopup() {
         String parentWindow = driver.getWindowHandle();
         String popupWindow = null;
-
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> iterator = handles.iterator();
-
         while (iterator.hasNext()) {
             popupWindow = iterator.next();
         }
-
         try {
             //change to popup window
             driver.switchTo().window(popupWindow);
@@ -36,7 +33,6 @@ public class PageHelper {
         }
         //change back to parent window
         driver.switchTo().window(parentWindow);
-
     }
 
 }

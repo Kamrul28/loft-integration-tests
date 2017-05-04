@@ -2,6 +2,7 @@ package ui.common;
 
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -31,11 +32,19 @@ public class TestHelper {
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-        System.setProperty("webdriver.chrome.driver", "C:\\app\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\apps\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.loft.com");
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+        //if promo popup display
+        try {
+            driver.switchTo().activeElement();
+            driver.findElement(By.xpath("//*[@class='bx-close-link']")).click();
+        } catch (Exception e) {
+
+        }
     }
 
     @After
