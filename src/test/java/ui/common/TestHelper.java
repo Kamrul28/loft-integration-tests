@@ -33,10 +33,10 @@ public class TestHelper {
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         System.setProperty("webdriver.chrome.driver", "C:\\apps\\chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
         driver.get("https://www.loft.com");
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // default 90
 
         //if promo popup display
         try {

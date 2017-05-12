@@ -10,7 +10,7 @@ import ui.common.PageHelper;
  */
 public class ShoppingCartPage extends PageHelper {
 
-    @FindBy(id = "search-toggle")
+    @FindBy(xpath = ".//*[@id='search-toggle']")
     private WebElement searchToggle;
     @FindBy(xpath = "//*[@id='endeca-search-bar-frame']/span/div/input")
     private WebElement searchField;
